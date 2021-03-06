@@ -8,7 +8,7 @@
 6. 学习语法
 7. 写注释的好处
   
-# What is SQL Anyway?
+## What is SQL Anyway?
 1. 什么是SQL
     1. Structured Query Language - "sequel"
     2. 查询，插入，更新和修改数据
@@ -31,4 +31,18 @@
         + 数据库客户端用户
         + 使用SQL查询与检索数据
 
-# 数据科学家如何使用SQL
+## 数据科学家如何使用SQL
+1. 检索数据
+2. 创建自己的表格或测试环境
+3. 组合多个source
+4. 为分析编写复杂的查询语句
+
+## SQL与数据库管理系统(DBMS)
+1. 语法取决于你使用的DBMS
+2. 每种DBMS都有自己的特殊语句
+3. SQL能够翻译这些特殊语句
+4. 有时需要根据DBMS的特殊语句修改你的语句
+
+## 关系数据库管理系统
+- Microsoft SQL Server
+- 
