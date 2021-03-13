@@ -118,4 +118,4 @@
 2. 外键（foreign key）：一列或几列，能够一起用来确定另一张表格中的一行
 
 ### ER图标记法
-![](https://github.com/markyanjunch/SQL-Basics-for-Data-Science/blob/main/SQL%20for%20Data%20Science/Figures/ERDiagramNotation.JPG)
+<div align=center><img src="https://github.com/markyanjunch/SQL-Basics-for-Data-Science/blob/main/SQL%20for%20Data%20Science/Figures/ERDiagramNotation.JPG" width = "700" height = "450" alt=""/></div>
