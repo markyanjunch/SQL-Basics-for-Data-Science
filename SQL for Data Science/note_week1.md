@@ -92,4 +92,30 @@
 1. NoSQL - Not Only SQL
 2. 一种储存和检索不使用关系数据库中的表格关系来建模的非结构化数据的机制
 
+## Data Models Part 3: Relational vs. Transactional Models
+### 关系模型与事务模型
+- **Relational Model**: 允许以一种简单、符合逻辑与直觉的方式来进行简单的查询和数据操作
+- **Transactional Model**: 操作型数据库——医疗保健系统中的保险索赔
 
+### 数据模型构件
+1. 主体(Entity)：人，地点，事物或事件；可区分，唯一且界限清晰
+2. 属性(Attribute)：主体的特征
+3. 关系(Relationship)：描述主体间的联系
+    + One-to-many: 客户与发票
+    + Many-to-many：学生与班级
+    + One-to-one：经理与商店
+
+### 实体-联系图（ER Diagrams）
+1. ER 模型：由主体类型组成，列举主体类型的实例间存在的联系
+2. 作用
+    + 展示联系
+    + 业务流程
+    + 可视化
+    + 展示连接（primary keys）
+
+### 主键和外键
+1. 主键（primary key）：一列（或一组列），他们的值能够唯一确定表格中的每一行
+2. 外键（foreign key）：一列或几列，能够一起用来确定另一张表格中的一行
+
+### ER图标记法
+![fig](https://github.com/markyanjunch/SQL-Basics-for-Data-Science/edit/main/SQL%20for%20Data%20Science/Figures/ERDiagram/Notation)
