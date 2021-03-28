@@ -166,6 +166,12 @@ FROM Products
 FETCH FIRST 5 ROWS ONLY;
 ```
 
+## Creating Tables
+### 为什么要用表格
+1. 使用表格建立模型与预测
+2. 建立控制面板
+3. 使用其他工具可视化数据
+4. 从其他来源提取数据
 ### 建立你自己的表格
 ```sql
 CREATE TABLE shoes
