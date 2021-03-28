@@ -78,7 +78,7 @@
 1. 列：表格中的一个field
 2. 行：表格中的一条记录
 
-## Data Models Part 2： The Evolution of Data Models
+## Data Models Part 2: The Evolution of Data Models
 ### 什么是数据建模？
 1. 整理与结构化信息，并放入多个关系表格中
 2. 能够表示一个业务流程或业务流程间的关系
