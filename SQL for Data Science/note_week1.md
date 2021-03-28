@@ -118,4 +118,141 @@
 2. 外键（foreign key）：一列或几列，能够一起用来确定另一张表格中的一行
 
 ### ER图标记法
-<div align=center><img src="https://github.com/markyanjunch/SQL-Basics-for-Data-Science/blob/main/SQL%20for%20Data%20Science/Figures/ERDiagramNotation.JPG" width = "375" height = "225" alt=""/></div>
+<div align=center><img src="./SQL%20for%20Data%20Science/Figures/ERDiagramNotation.JPG" width = "375" height = "225" alt=""/></div>
+
+## Retrieving Data with a SELECT Statement
+### SELECT语句
+1. 使用SELECT语句需要指出两条信息：你需要什么以及从哪里选取它  
+```sql
+SELECT prod_name
+FROM Products;
+```
+2. 检索多列：添加多个列名称，用逗号分隔
+```sql
+SELECT prod_name
+       ,prod_id
+       ,prod_price
+FROM Products;
+```
+3. 使用通配符检索多列
+```sql
+SELECT *
+FROM Products;
+```
+### 为什么要限制输出结果数量？  
+如果你的数据库很大，可能你只想看到部分数据
+```sql
+SELECT columns you wish to see
+FROM specific table
+LIMIT number of records
+```
+### 限制输出结果数量的不同语法
+1. SQLite
+```sql
+SELECT prod_name
+FROM Products
+LIMIT 5;
+```
+2. Oracle
+```sql
+SELECT prod_name
+FROM Products
+WHERE ROWNUM <= 5;
+```
+3. DB2
+```sql
+SELECT prod_name
+FROM Products
+FETCH FIRST 5 ROWS ONLY;
+```
+
+### 建立你自己的表格
+```sql
+CREATE TABLE shoes
+(
+  Id        char(10)        PRIMARY KEY,
+  Brand     char(10)        NOT NULL,
+  Type      char(250)       NOT NULL,
+  Color     char(250)       NOT NULL,
+  Price     decimal(8,2)    NOT NULL,
+  Desc      Varchar(750)    NULL
+);
+```
+### Null值与主键
+1. 每一列不是NULL就是NOT NULL
+2. 如果有人尝试提交未赋值的列会报错
+3. 不要弄混null值与空字符串
+4. 主键不能为null
+5. 主键必须被赋值
+
+### 向表格添加数据
+```sql
+INSERT INTO Shoes
+VALUES('14535974'
+       ,'Gucci'
+       ,'Slippers'
+       ,'Pink'
+       ,'695.00'
+       ,NULL
+                 );
+```
+Better:
+```sql
+INSERT INTO Shoes
+      (Id
+       ,Brand
+       ,Type
+       ,Color
+       ,Price
+       ,Desc
+       )
+VALUES('14535974'
+       ,'Gucci'
+       ,'Slippers'
+       ,'Pink'
+       ,'695.00'
+       ,NULL
+                 );
+```
+
+## Creating Temporary Tables
+### 为什么要创建临时表格？
+1. 当前进程被终止时临时表格会被删除
+2. 比创建真正的表格更快
+3. 在使用子集和合并的复杂检索中很有用
+
+### 如何创建临时表格
+```sql
+CREATE TEMPORARY TABLE Sandals As
+(
+    SELECT *
+    FROM shoes
+    WHERE shoe_type='sandals'
+)
+```
+## Adding Comments to SQL
+### 为什么要加注释
+1. 帮助你记住你在做什么和为什么这么做
+2. 注释掉一些代码
+3. 系统性地排查检索问题
+
+### 添加注释
+1. Single Line
+```sql
+SELECT shoe_id
+--,brand_id
+,shoe_name
+FROM shoes
+```
+2. Section
+```sql
+SELECT shoe_id
+/*,brand_id
+,shoe_name
+*/
+FROM shoes
+```
+### 源代码编辑器
+1. 独立于数据库之外的环境，你能在其中编写代码，e.g. Notepad++
+2. 自动高亮和缩进语句
+3. 帮助你编写整洁的代码
