@@ -18,7 +18,7 @@ This course consists of 4 modules:
     - [Note](./SQL%20for%20Data%20Science/note_week2.md)
         + [Objectives](./SQL%20for%20Data%20Science/note_week2.md#目标)
         + [Basics of Filtering with SQL](./SQL%20for%20Data%20Science/note_week2.md#basics-of-filtering-with-sql)
-        + [Advanced Filtering: IN, OR and NOT](./SQL%20for%20Data%20Science/note_week2.md#vadvanced-filtering-in-or-and-not)
+        + [Advanced Filtering: IN, OR and NOT](./SQL%20for%20Data%20Science/note_week2.md#advanced-filtering-in-or-and-not)
 3. Subqueries and Joins in SQL
 
 4. Modifying and Analyzing Data with SQL
