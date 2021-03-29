@@ -14,6 +14,11 @@ This course consists of 4 modules:
         + [Creating Tables](./SQL%20for%20Data%20Science/note_week1.md#creating-tables)
         + [Creating Temporary Tables](./SQL%20for%20Data%20Science/note_week1.md#creating-temporary-tables)
         + [Adding Comments to SQL](./SQL%20for%20Data%20Science/note_week1.md#adding-comments-to-sql)
-3. Filtering, Sorting, and Calculating Data with SQL
-4. Subqueries and Joins in SQL
-5. Modifying and Analyzing Data with SQL
+2. Filtering, Sorting, and Calculating Data with SQL
+    - [Note](./SQL%20for%20Data%20Science/note_week2.md)
+        + [Objectives](./SQL%20for%20Data%20Science/note_week2.md#目标)
+        + [Basics of Filtering with SQL](./SQL%20for%20Data%20Science/note_week2.md#basics-of-filtering-with-sql)
+        + [Advanced Filtering: IN, OR and NOT](./SQL%20for%20Data%20Science/note_week2.md#vadvanced-filtering-in-or-and-not)
+3. Subqueries and Joins in SQL
+
+4. Modifying and Analyzing Data with SQL
