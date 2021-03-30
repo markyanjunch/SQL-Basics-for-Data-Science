@@ -118,7 +118,7 @@
 2. 外键（foreign key）：一列或几列，能够一起用来确定另一张表格中的一行
 
 ### ER图标记法
-<div align=center><img src="https://github.com/markyanjunch/SQL-Basics-for-Data-Science/tree/main/SQL%20for%20Data%20Science/Figures" width = "375" height = "225" alt=""/></div>
+<div align=center><img src="https://github.com/markyanjunch/SQL-Basics-for-Data-Science/tree/main/SQL%20for%20Data%20Science/Figures/ERDiagramNotation.JPG?raw=true" width = "375" height = "225" alt=""/></div>
 
 ## Retrieving Data with a SELECT Statement
 ### SELECT语句
