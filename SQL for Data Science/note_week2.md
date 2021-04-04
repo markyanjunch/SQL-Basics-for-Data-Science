@@ -182,7 +182,7 @@ WHERE size LIKE '_pizza'
 4. 通配符的位置很重要
 
 ## Sorting with ORDER BY
-## 为什么要给数据排序
+### 为什么要给数据排序
 1. 显示的数据以潜在的表格的顺序出现
 2. 更新或删除数据会改变这个顺序
 3. 如果没有明确指出，不能假定检索的数据序列
@@ -193,17 +193,80 @@ SELECT something
 FROM database
 ORDER BY characteristic
 ```
-## 使用ORDER BY的规则
+### 使用ORDER BY的规则
 1. 使用一列或多列的名称
 2. 在每个增加的列名称后加个逗号
 3. 能够通过未被检索的列排序
 4. 必须是select语句中的最后一部分
-## 通过列的位置排序
+### 通过列的位置排序
 ```sql
 ORDER BY 2,3
 ```
 2表示第二列，3表示第三列，等等
-## 排序顺序
+### 排序顺序
 1. DESC表示降序
 2. ASC表示升序
 3. 只对在它之后的的一个列名称有用
+
+## Math Operations
+### 数学运算符
+|Operator|Description|
+|-|-|
+|+|加|
+|-|减|
+|* |乘|
+|/|除|
+### 乘法实例
+```sql
+SELECT ProductID
+,UnitsOnOrder
+,UnitPrice
+,UnitsOnOrder*UnitPrice AS Total_Order_Cost
+FROM Products;
+```
+### 运算符顺序
+括号>乘方>乘法>除法>加法>减法  
+*"Please excuse my dear Aunt Sally"*
+### 混合数学运算
+```sql
+SELECT ProductID
+,Quantity
+,UnitPrice
+,Discount
+,(UnitPrice-Discount)/Quantity AS Total_Cost
+FROM OrderDetails;
+```
+
+## Aggregate Functions
+### 什么是汇总函数
+1. 用来总结数据
+2. 寻找最大值和最小值
+3. 寻找总行数
+4. 寻找平均数
+
+### 汇总函数
+|Function|Description|
+|-|-|
+|AVG()|求一列值的平均|
+|COUNT()|计算值的个数|
+|MIN()|寻找最小值|
+|MAX()|寻找最大值|
+|SUM()|对列的值求和|
+
+### AVERAGE函数  
+包含NULL值的行会被AVERAGE函数忽略
+```sql
+SELECT AVG(UnitPrice) AS avg_price
+FROM products
+```
+### COUNT函数
+1. COUNT(* )-计算一张表格中所有的行数，包括NULL值
+```sql
+SELECT COUNT(*) AS total_customers
+FROM Customer;
+```
+2. COUNT(column)-计算一张表格中特定列的行数，忽略NULL值
+```sql
+SELECT COUNT(CustomerID) AS total_customers
+FROM Customer;
+```
