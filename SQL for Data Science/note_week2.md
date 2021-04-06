@@ -329,8 +329,8 @@ HAVING COUNT (*) >=2;
 2. HAVING在数据被分类后筛选
 3. 被WHERE语句去除的行不会被包含在分类里
 ### ORDER BY 与 GROUP BY
-    - ORDER BY 会给数据排序
-    - GROUP BY 不会给数据排序
+- ORDER BY 会给数据排序
+- GROUP BY 不会给数据排序
 
 ## Putting It All Together
 ### 核心SQL语句
