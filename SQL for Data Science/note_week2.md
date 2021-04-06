@@ -270,3 +270,75 @@ FROM Customer;
 SELECT COUNT(CustomerID) AS total_customers
 FROM Customer;
 ```
+### MAX与MIN函数  
+NULL值会被MIN和MAX函数忽略
+```sql
+SELECT MAX(UnitPrice) AS max_prod_price
+FROM Products
+```
+```sql
+SELECT MAX(UnitPrice) AS max_prpod_price
+,MIN(UnitPrice) AS min_prod_price
+FROM Products
+```
+### SUM汇总函数
+```sql
+SELECT SUM(UnitPrice) AS total_price
+FROM Products
+WHERE SupplierID=23;
+```
+### 在汇总函数中使用DISTINCT
+1. 如果没用DISTINCT，假定是ALL
+2. COUNT(* )不能用DISTINCT
+3. MIN和MAX函数中没必要使用
+```sql
+SELECT COUNT(DISTINCT CustomerID)
+FROM Customers
+```
+
+## Grouping Data with SQL
+### 数据分类
+1. 学习如何给数据分类以总结数据的子集
+2. 新语句GROUP BY; HAVING
+3. 如何对一个特殊的值作汇总
+```sql
+SELECT
+Region
+,COUNT(CustomerID) AS total_customers
+FROM Customers
+GROUP BY Region;
+```
+### 其他关于GROUP BY的信息
+1. GROUP BY语句能包含多列
+2. SELECT语句中的每一列都必须出现在GROUP BY中，汇总计算除外
+3. 如果GROUP BY的列包含NULL，NULL值会被分类到一起
+### HAVING语句-筛选分类
+1. WHERE对分类没用
+2. WHERE筛选的是行
+3. 转而我们用HAVING语句来筛选分类
+```sql
+SELECT
+CustomerID
+,COUNT(*) AS orders
+FROM Orders
+GROUP BY CustomerID
+HAVING COUNT (*) >=2;
+```
+### WHERE vs. HAVING
+1. WHERE在数据被分类前筛选
+2. HAVING在数据被分类后筛选
+3. 被WHERE语句去除的行不会被包含在分类里
+### ORDER BY 与 GROUP BY
+    - ORDER BY 会给数据排序
+    - GROUP BY 不会给数据排序
+
+## Putting It All Together
+### 核心SQL语句
+|Clause|Description|Required|
+|-|-|-|
+|SELECT|要返回的列或表达式|Yes|
+|FROM|要检索数据的表格|只有当从一个表格中选取数据时需要|
+|WHERE|行间的筛选|No|
+|GROUP BY|明确类别|只有当通过类别计算汇总时需要|
+|HAVING|类别间的筛选|No|
+|ORDER BY|输出排序|No|
