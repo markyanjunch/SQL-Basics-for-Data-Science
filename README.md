@@ -26,5 +26,11 @@ This course consists of 4 modules:
         + [Grouping Data wiht SQL](./SQL%20for%20Data%20Science/note_week2.md#grouping-data-with-sql)
         + [Putting It All Together](./SQL%20for%20Data%20Science/note_week2.md#putting-it-all-together)
 3. Subqueries and Joins in SQL
-
+    - [Note](./SQL%20for%20Data%20Science/note_week3.md)
+        + [Objectives](./SQL%20for%20Data%20Science/note_week3.md#目标)
+        + [Using Subqueries](./SQL%20for%20Data%20Science/note_week3.md#using-subqueries)
+        + [Subquery Best Practices and Considerations](./SQL%20for%20Data%20Science/note_week3.md#subquery-best-practices-and-considerations)
+        + [Joining Tables: An Introduction](./SQL%20for%20Data%20Science/note_week3.md#joining-tables-an-introduction)
+        + [Catesian(Cross) Joins](./SQL%20for%20Data%20Science/note_week3.md#catesian-cross-joins)
+        
 4. Modifying and Analyzing Data with SQL
