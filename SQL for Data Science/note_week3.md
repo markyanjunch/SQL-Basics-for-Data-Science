@@ -121,7 +121,7 @@ ORDER BY Customer_name
 2. 在一条请求中完成从多张表格检索信息
 3. Joins不是物理上的——它们旨在请求执行时有效
 
-## Catesian (Cross) Joins
+## Catesian(Cross) Joins
 ### 什么是笛卡尔连接（交叉连接）？  
 CROSS JOINs: 来自第一张表格中的每一行都与另一张表格中的所有行相连
 <div align=center><img src="https://github.com/markyanjunch/SQL-Basics-for-Data-Science/blob/main/SQL%20for%20Data%20Science/Figures/CartesianCrossJoin.JPG?raw=ture" width = "533" height = "292" alt=""/></div>
