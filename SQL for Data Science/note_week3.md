@@ -125,12 +125,14 @@ ORDER BY Customer_name
 ### 什么是笛卡尔连接（交叉连接）？  
 CROSS JOINs: 来自第一张表格中的每一行都与另一张表格中的所有行相连
 <div align=center><img src="https://github.com/markyanjunch/SQL-Basics-for-Data-Science/blob/main/SQL%20for%20Data%20Science/Figures/CartesianCrossJoin.JPG?raw=ture" width = "533" height = "292" alt=""/></div>
+
 ### 笛卡尔（交叉）连接实例
 ```sql
 SELECT product_name
-,unit_price
-,company_name
-FROM suppliers CROSS JOIN products;
+	,unit_price
+	,company_name
+FROM suppliers
+CROSS JOIN products;
 ```
 ### 笛卡尔（交叉）连接的缺点
 1. 不是很常用
