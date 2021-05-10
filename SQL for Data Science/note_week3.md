@@ -119,7 +119,7 @@ ORDER BY Customer_name
 ### 连接(Joins)
 1. 动态地关联每张表格中的正确记录
 2. 在一条请求中完成从多张表格检索信息
-3. Joins不是物理上的——它们旨在请求执行时有效
+3. Joins不是物理上的——它们只在请求执行时有效
 
 ## Catesian(Cross) Joins
 ### 什么是笛卡尔连接（交叉连接）？  
@@ -138,4 +138,33 @@ CROSS JOIN products;
 1. 不是很常用
 2. 计算上负担大
 3. 会为产品得到错误的或根本不存在的供应商
+
+## Inner Joins
+### 什么是内连接  
+INNER JOIN关键词选择在两张表格中有相匹配的值的记录
+<div align=center><img src="https://github.com/markyanjunch/SQL-Basics-for-Data-Science/blob/main/SQL%20for%20Data%20Science/Figures/InnerJoin.JPG?raw=ture" width = "446" height = "285" alt=""/></div>
+### 内连接实例
+```sql
+SELECT suppliers INNER JOIN Products
+ON Suppliers.supplierid = Products.supplierid
+```
+### 内连接语法
+1. 指出连接类型(INNER JOIN)
+2. 连接条件需要在FROM语句中使用ON语句
+3. 连接越多的表格会影响数据库的整体表现
+4. 你可以连接多张表格，没有限制
+5. 列出所有的表格，然后定义条件
+
+### 内连接与多张表格
+```sql
+SELECT o.OrderID, c.CompanyName, e.LastName
+FROM ((Orders o INNER JOIN Customers c ON
+o.CustomerID = c.CustomerID)
+INNER JOIN Employee e ON o.EmployeeID = e.EmployeeID);
+```
+### 使用内连接的最佳做法
+1. 提前限定(pre-qualify)名称
+2. 不要建立无用的连接
+3. 思考建立的连接类型
+4. 你是如何连接记录的？
 
