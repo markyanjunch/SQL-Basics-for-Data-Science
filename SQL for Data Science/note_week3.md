@@ -143,11 +143,13 @@ CROSS JOIN products;
 ### 什么是内连接  
 INNER JOIN关键词选择在两张表格中有相匹配的值的记录
 <div align=center><img src="https://github.com/markyanjunch/SQL-Basics-for-Data-Science/blob/main/SQL%20for%20Data%20Science/Figures/InnerJoin.JPG?raw=ture" width = "446" height = "285" alt=""/></div>
+
 ### 内连接实例
 ```sql
 SELECT suppliers INNER JOIN Products
 ON Suppliers.supplierid = Products.supplierid
 ```
+
 ### 内连接语法
 1. 指出连接类型(INNER JOIN)
 2. 连接条件需要在FROM语句中使用ON语句
@@ -167,4 +169,55 @@ INNER JOIN Employee e ON o.EmployeeID = e.EmployeeID);
 2. 不要建立无用的连接
 3. 思考建立的连接类型
 4. 你是如何连接记录的？
+
+## Aliases and Self Joins
+### 什么是别名
+1. SQL别名会赋予一张表格或一列一个暂时的名称
+2. 使列名可读性更强
+3. 别名只会在一次查询的期间有效
+```sql
+SELECT column_name
+FROM table_name AS alias_name
+```
+
+### 使用别名的查询实例
+```sql
+SELECT vendor_name
+,product_name
+,product_price
+FROM Vendors, Products
+WHERE Vendors.vendor_id = Products.vendor_id;
+```
+
+使用别名：
+```sql
+SELECT vendor_name
+,product_name
+,product_price
+FROM Vendors As v, Products As p
+WHERE v.vendor_id = p.vendor_id;
+```
+
+### 自连接
+1. 匹配来自同一城市的客户
+2. 将表格视作两张不同的表格
+3. 将原始表格与它自己连接
+```sql
+SELECT column_name(s)
+FROM table1 T1, table2 T2
+WHERE condition;
+```
+
+### 自连接实例  
+以下的SQL语句将来自同一城市的客户匹配到了一起：
+```sql
+SELECT A.CustomerName as CustomerName1
+,B.CustomerName AS CustomerName2
+,A.City
+FROM Customers A, Customers B
+WHERE A.CustoemrID = B.CustomerID
+AND A.City=B.City
+ORDER BY A.City;
+```
+
 
